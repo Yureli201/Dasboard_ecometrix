@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Index } from './pages/index';
-import { Login } from './pages/login/login';
+import { Login } from './pages/login/login.component';
 import { SignUp } from './pages/sign-up/sign-up';
 import { PageNotFound } from './pages/page-not-found/page-not-found';
 import { Dashboard } from './pages/dashboard/dashboard';
