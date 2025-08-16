@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-navbar-user',
-  imports: [],
+  standalone: true,          // importante para que funcione imports
+  imports: [RouterModule, CommonModule],    // necesario para routerLink
   templateUrl: './navbar-user.html',
-  styleUrl: './navbar-user.css'
+  styleUrls: ['./navbar-user.css']
 })
 export class NavbarUser {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
