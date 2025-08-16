@@ -58,3 +58,7 @@ body {
   margin:  auto;    /* centra horizontalmente */
   padding: 0 4rem;   /* espacio a los lados */
 }
+
+html {
+  scroll-behavior: smooth;
+}
