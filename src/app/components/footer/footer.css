@@ -1,0 +1,58 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Botón Ingresar */
+.btn-eco {
+  background-color: #77A645;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.75rem 0; /* py-3 */
+  width: 100%;
+  margin-top: 0.75rem; /* mt-3 */
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-eco:hover {
+  background-color: #6b8a36;
+}
+
+/* Labels para inputs */
+.custom-label {
+  color: #7AB2C3;
+  font-weight: 600;
+  font-size: 0.75rem; /* text-xs */
+  display: block;
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+/* Inputs */
+.custom-input {
+  background-color: #7AB2C3;
+  border: none;
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.75rem 1rem; /* py-3 px-4 */
+  color: #374151; /* texto gris oscuro */
+  width: 100%;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.custom-input::placeholder {
+  color: rgb(56, 85, 102);
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 0 2px #7AB2C3;
+}
+
+@media (max-width: 770px) {
+  .hide-below-770 {
+    display: none;
+  }
+}
+

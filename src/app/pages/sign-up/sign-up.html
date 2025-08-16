@@ -1,1 +1,155 @@
-<p>sign-up works!</p>
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EcoMetrix - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800 font-sans min-h-screen flex flex-col">
+    <!-- Main content container -->
+    <main
+      class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center py-12 sm:py-20 lg:py-28"
+      style="background-color: #f7ffe3"
+    >
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-8xl"
+      >
+        <!-- Izquierda: Imagen -->
+        <div class="flex flex-col items-center gap-1">
+          <img
+            src="assets/logos/LogoColoresTrasnparente.png"
+            alt="Eco Metrix Logo"
+            class="w-[400px] h-auto object-contain rounded-lg hide-below-770"
+          />
+          <div
+            class="italic text-center text-3xl font-semibold hide-below-770"
+            style="color: #074f34"
+          >
+            Mide hoy, mejora mañana
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 md:p-8 w-full max-w-lg mx-auto"
+        >
+          <h2 class="text-center text-xl font-bold mb-6 text-black">
+            Registro de usuario
+          </h2>
+
+          <form class="space-y-4">
+            <input
+              type="email"
+              placeholder="Correo electrónico"
+              class="custom-input text-sm"
+              required
+            />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input
+                type="password"
+                placeholder="Contraseña"
+                class="custom-input text-sm"
+                required
+              />
+              <input
+                type="password"
+                placeholder="Confirmar contraseña"
+                class="custom-input text-sm"
+                required
+              />
+            </div>
+
+            <input
+              type="text"
+              placeholder="Nombre"
+              class="custom-input text-sm"
+              required
+            />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Apellido paterno"
+                class="custom-input text-sm"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Apellido materno"
+                class="custom-input text-sm"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Empresa"
+                class="custom-input text-sm"
+              />
+              <input
+                type="text"
+                placeholder="Estado"
+                class="custom-input text-sm"
+              />
+            </div>
+
+            <input
+              type="text"
+              placeholder="Sector empresarial"
+              class="custom-input text-sm"
+            />
+
+            <div class="text-center text-sm">
+              <input type="checkbox" id="terminos" class="mt-1" required />
+              <label for="terminos">
+                He leído y acepto el
+                <a href="#" class="text-green-700 underline"
+                  >Aviso de privacidad, términos y condiciones</a
+                >.
+              </label>
+            </div>
+
+            <div class="flex justify-center gap-4 mt-4">
+              <button
+                type="button"
+                class="w-36 py-3 rounded-full text-sm bg-gray-600 text-white hover:bg-gray-700"
+              >
+                Volver
+              </button>
+              <button
+                type="submit"
+                class="w-36 py-3 rounded-full text-sm text-white"
+                style="background-color: #77a645"
+                onmouseover="this.style.backgroundColor='#6b8a36'"
+                onmouseout="this.style.backgroundColor='#77A645'"
+              >
+                Continuar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  </body>
+</html>
