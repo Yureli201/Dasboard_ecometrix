@@ -1,23 +1,5 @@
 <app-navbar></app-navbar>
-
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoMetrix</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body class="text-gray-800 font-[Montserrat]">
-    <div
-      class="page-container max-w-7xl mx-auto px-4"
-      style="background-color: #f3fbd9"
-    >
+<div class=" m-auto px-16 max-w-[1200px] mx-auto scroll-smooth bg-back">
       <section class="py-12 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-6">
           <!-- Columna 1: Imagen pegada a la izquierda -->
@@ -49,8 +31,8 @@
               forma clara y transparente.
             </p>
             <div class="flex gap-4">
-              <button class="btn-green-dark">Comenzar gratis</button>
-              <button class="btn-green-light">Comparar planes</button>
+              <button class="bg-dark-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-dark-green">Comenzar gratis</button>
+              <button class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Comparar planes</button>
             </div>
           </div>
         </div>
@@ -132,11 +114,11 @@
         <h2 class="text-xl font-bold mb-8 text-center">Planes de membresía</h2>
         <div class="grid md:grid-cols-3 gap-6">
           <!-- Gratis -->
-          <div class="card-blue flex flex-col justify-between">
+          <div class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col">
             <div>
               <h3 class="font-bold text-lg mb-2">Gratuito</h3>
               <p class="mb-2 text-sm">
-                Ideal para microempresas que inician <br />
+                Ideal para micro empresas que inician <br />
                 su medición de impacto.
               </p>
               <strong>Incluye:</strong>
@@ -158,7 +140,7 @@
           </div>
 
           <!-- Premium Mensual -->
-          <div class="card-blue flex flex-col justify-between">
+          <div class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col justify-between">
             <div>
               <h3 class="font-bold text-lg mb-2">Premium Mensual</h3>
               <p class="mb-2 text-sm">
@@ -176,12 +158,12 @@
               </ul>
             </div>
             <div class="flex justify-center mt-4">
-              <button class="btn-green-light">Comenzar</button>
+              <button class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Comenzar</button>
             </div>
           </div>
 
           <!-- Premium Anual -->
-          <div class="card-blue flex flex-col justify-between">
+          <div class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col justify-between">
             <div>
               <h3 class="font-bold text-lg mb-2">Premium Anual</h3>
               <p class="mb-2 text-sm">
@@ -194,7 +176,7 @@
               </p>
             </div>
             <div class="flex justify-center mt-4">
-              <button class="btn-green-light">Comenzar</button>
+              <button class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Comenzar</button>
             </div>
           </div>
         </div>
@@ -223,27 +205,26 @@
           <input
             type="text"
             placeholder="Ingrese su nombre completo"
-            class="input-gray"
+            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
           />
           <input
             type="text"
             placeholder="Ingrese el nombre de su empresa"
-            class="input-gray"
+            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
           />
           <input
             type="email"
             placeholder="Ingrese su correo electrónico"
-            class="input-gray"
+            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
           />
           <textarea
             placeholder="Ingrese su mensaje"
-            class="input-gray"
+            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
           ></textarea>
-          <button type="submit" class="btn-green-light">Enviar</button>
+          <button type="submit" class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Enviar</button>
         </form>
       </section>
     </div>
-  </body>
-</html>
+
 
 <app-footer></app-footer>
