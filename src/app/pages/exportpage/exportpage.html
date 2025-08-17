@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plantilla Reporte Ambiental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white text-gray-800 font-sans min-h-screen flex flex-col">
+    <!-- Main content container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex flex-col">
+      
+      <!-- Botón Exportar arriba a la derecha -->
+      <div class="flex justify-end mb-4">
+        <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+          Exportar
+        </button>
+      </div>
+
+      <!-- Título del reporte -->
+      <h1 class="text-2xl font-bold text-center mb-6">Reporte Ambiental</h1>
+
+      <!-- Información general -->
+      <div class="info-box mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <p><strong>Empresa:</strong> Café Sierra Encantada</p>
+          <p><strong>Estado:</strong> Pendiente / Completo</p>
+        </div>
+        <div>
+          <p><strong>Periodo:</strong> Enero – Marzo 2025</p>
+          <p><strong>Fecha de generación:</strong> 9 de agosto de 2025</p>
+        </div>
+      </div>
+
+      <!-- Indicadores clave (KPIs) -->
+      <h2 class="text-xl font-semibold mb-4">Indicadores clave (KPIs)</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- Tabla de indicadores -->
+        <div class="table-box p-4 rounded">
+          <!-- Aquí va la tabla de KPIs -->
+          <p class="font-semibold mb-2">Tabla de indicadores</p>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-left text-sm">
+              <thead>
+                <tr class="bg-gray-200">
+                  <th class="px-2 py-1">Indicador</th>
+                  <th class="px-2 py-1">Periodo Actual</th>
+                  <th class="px-2 py-1">Variación</th>
+                  <th class="px-2 py-1">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white">
+                  <td class="px-2 py-1">Ejemplo 1</td>
+                  <td class="px-2 py-1">123</td>
+                  <td class="px-2 py-1">+5%</td>
+                  <td class="px-2 py-1 text-green-600">Verde</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-2 py-1">Ejemplo 2</td>
+                  <td class="px-2 py-1">456</td>
+                  <td class="px-2 py-1">-2%</td>
+                  <td class="px-2 py-1 text-yellow-500">Amarillo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Simbología -->
+        <div class="table-box p-4 rounded">
+          <!-- Aquí va la simbología -->
+          <p class="font-semibold mb-2">Simbología</p>
+          <ul class="text-sm">
+            <li><span class="text-red-600 font-bold">Rojo</span> - Fuera del rango deseado</li>
+            <li><span class="text-yellow-500 font-bold">Amarillo</span> - Tolerancia aceptable</li>
+            <li><span class="text-green-600 font-bold">Verde</span> - Dentro del rango óptimo</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Gráficas -->
+      <h2 class="text-xl font-semibold mb-4">Gráficas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- Gráfico 1 -->
+        <div>
+          <p class="mb-2">Consumo mensual de energía y agua</p>
+          <div class="placeholder-chart"></div>
+        </div>
+
+        <!-- Gráfico 2 -->
+        <div>
+          <p class="mb-2">Distribución de residuos (Aprovechados vs No aprovechados)</p>
+          <div class="placeholder-chart"></div>
+        </div>
+      </div>
+
+      <!-- Gráfico grande inferior -->
+      <div class="mb-6">
+        <p class="mb-2">Evolución de emisiones de CO2 en los últimos tres meses</p>
+        <div class="placeholder-chart-large"></div>
+      </div>
+      
+    </main>
+  </body>
+</html>
