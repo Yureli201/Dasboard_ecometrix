@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Usuario, Login } from './models/modelos';
+import { Usuario } from './models/modelos';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class Api {
   registrarUsuario(usuario:Usuario){
     return this.http.post(`${this.URL_AUTH}register`, usuario);
   }
-  loginUsuario(login:Login){
+  loginUsuario(login:any){
     return this.http.post(`${this.URL_AUTH}login`, login);
   }
 

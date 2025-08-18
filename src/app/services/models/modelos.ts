@@ -7,7 +7,3 @@ export interface Usuario {
     actividad_principal: string;
     num_empleados: number;
 }
-export interface Login{
-    gmail: string;
-    password: string;
-}
