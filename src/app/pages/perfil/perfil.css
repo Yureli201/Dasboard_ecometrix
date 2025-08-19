@@ -1,0 +1,66 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Botón Eco */
+.btn-eco {
+  background-color: #77a645;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-eco:hover {
+  background-color: #6b8a36;
+}
+
+/* Botón Cancelar (gris más oscuro) */
+.btn-cancel {
+  background-color: #b0b0b0;
+  color: #374151;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-cancel:hover {
+  background-color: #8f8f8f;
+}
+
+/* Labels */
+.custom-label {
+  color: #7ab2c3;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* Inputs */
+.custom-input {
+  background-color: #7ab2c3;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  color: #374151;
+  width: 100%;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.custom-input::placeholder {
+  color: rgb(56, 85, 102);
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 0 2px #7ab2c3;
+}
