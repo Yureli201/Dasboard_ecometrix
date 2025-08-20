@@ -7,3 +7,9 @@ export interface Usuario {
     actividad_principal: string;
     num_empleados: number;
 }
+
+export interface TipoFuente {
+    id: number;
+    nombre: string;
+    unidad: string;
+}
