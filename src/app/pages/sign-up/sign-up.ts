@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../../services/models/modelos';
 import { Api } from '../../services/api';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-sign-up',
   imports: [RouterModule, FormsModule, HttpClientModule], // <-- Agrega HttpClientModule aquí
-  providers: [Api],
+  providers: [Api, Router],
   templateUrl: './sign-up.html',
   styleUrl: './sign-up.css'
 })
@@ -26,7 +27,7 @@ export class SignUp {
   actividad_principal: string = ''
   acepta_terminos: boolean = false
 
-  constructor(private apiService: Api) {}
+  constructor(private router: Router,private apiService: Api) {}
 
   registrarUsuario(){
     if (!this.nombre_empresa || !this.gmail || !this.contrasena || !this.confirmar_contrasena || !this.estado || !this.sector || this.num_empleados <= 0 || !this.actividad_principal){
@@ -55,10 +56,10 @@ export class SignUp {
     console.log('Datos del usuario:', usuario);
 
     this.apiService.registrarUsuario(usuario).subscribe({
-      next: (response) => {
+      next: (response:any) => {
         console.log('Registro exitoso:', response);
-        alert('Registro exitoso');
-        // Aquí puedes redirigir al usuario a otra página, como el login o dashboard
+        alert('Registro exitoso, por favor inicia sesión');
+        setTimeout(()=> {this.router.navigate(['/login'])},1000)
       },
       error: (error) => {
         console.error('Error en el registro:', error);
