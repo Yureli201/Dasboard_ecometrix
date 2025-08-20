@@ -18,14 +18,12 @@ export class Login {
 
   loginUsuario() {
     const login = { gmail: this.gmail, contraseña: this.contrasena };
-    console.log(login);
     
     this.apiService.loginUsuario(login).subscribe({
       next: (data:any) => {
         console.log('Login exitoso', data);
         sessionStorage.setItem('authToken', data.token);
         sessionStorage.setItem('user', data.user);
-        // Redirigir al dashboard o a la página deseada
         this.router.navigate(['/dashboard']);
       },
       error: (error) => {

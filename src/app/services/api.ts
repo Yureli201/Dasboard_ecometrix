@@ -11,7 +11,7 @@ export class Api {
   URL_USER = `https://api-ecometrix.onrender.com/api/user/`
   URL_DATA = `https://api-ecometrix.onrender.com/api/data/`
   URL_FOOTPRINT = `https://api-ecometrix.onrender.com/api/huella/`
-  URL_PRED = `https://api-ecometrix.onrender.com/api/prediction/`
+  URL_PRED = `https://api-ecometrix.onrender.com/api/prediction`
 
   constructor(private http: HttpClient) { }
 
@@ -42,6 +42,18 @@ export class Api {
     return this.http.delete(`${this.URL_DATA}actividad/${id_actividad}`)
   }
 
+  //Huella de carbono
+  crearHuella(detalles:any){
+    return this.http.post(`${this.URL_FOOTPRINT}calculate`,detalles)
+  }
+  obtenerHistorial(id:number){
+    return this.http.get(`${this.URL_FOOTPRINT}history/${id}`)
+  }
+
+  //prediccion
+  obtenerPrediccion(id_usuario:number){
+    return this.http.get(`${this.URL_PRED}/${id_usuario}`)
+  }
 /*
   obtenerUsuario() {
     const headers = this.getHeaders();
