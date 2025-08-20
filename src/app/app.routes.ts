@@ -5,6 +5,7 @@ import { SignUp } from './pages/sign-up/sign-up';
 import { PageNotFound } from './pages/page-not-found/page-not-found';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { Exportpage } from './pages/exportpage/exportpage';
+import { Perfil } from './pages/perfil/perfil';
 
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path:'sign-up',component:SignUp},
     {path:'dashboard',component:Dashboard},
     {path:'export',component:Exportpage},
+    {path:'perfil',component:Perfil},
     {path:'**', component:PageNotFound}
 ];
 
