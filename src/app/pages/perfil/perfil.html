@@ -1,54 +1,25 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EcoMetrix - Perfil</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="perfil.css" />
-  </head>
   <body
     class="bg-white text-gray-800 font-sans min-h-screen flex flex-col justify-center items-center"
   >
     <!-- Contenedor principal -->
     <main
-      class="flex-grow max-w-5xl w-full px-6 sm:px-10 lg:px-14 flex flex-col justify-center py-16 sm:py-20"
-      style="background-color: #f2ffd9"
+      class="flex-grow max-w-5xl w-full p-3 flex flex-col justify-center bg-back"
     >
       <div
         class="bg-white rounded-lg shadow-lg p-6 md:p-10 w-full max-w-2xl mx-auto"
       >
-        <h2 class="text-center text-2xl font-semibold mb-8 text-black">
+        <h2 class="text-center text-2xl font-semibold mb-4 text-black">
           Perfil de usuario
         </h2>
 
         <!-- Formulario Perfil -->
-        <form class="space-y-5">
+        <form class="space-y-3">
           <!-- Correo -->
           <div>
             <label class="custom-label">Correo electrónico</label>
             <input
               type="email"
               placeholder="usuario@empresa.com"
-              class="custom-input"
-              required
-            />
-          </div>
-
-          <!-- Nombre encargado -->
-          <div>
-            <label class="custom-label">Nombre del encargado</label>
-            <input
-              type="text"
-              placeholder="Nombre completo"
               class="custom-input"
               required
             />
@@ -120,19 +91,16 @@
             </div>
           </div>
 
-<!-- Botones de acción -->
-<div class="flex justify-center gap-4 pt-4 w-full">
-  <button type="button" class="btn-cancel flex-1">
-    Cancelar
-  </button>
-  <button type="submit" class="btn-eco flex-1">
-    Guardar cambios
-  </button>
-</div>
+          <!-- Botones de acción -->
+          <div class="flex justify-center gap-4 pt-4 w-full">
+            <button type="button" class="btn-cancel flex-1">
+              Cancelar
+            </button>
+            <button type="submit" class="btn-eco flex-1">
+              Guardar cambios
+            </button>
+          </div>
         </form>
       </div>
     </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
   </body>
-</html>

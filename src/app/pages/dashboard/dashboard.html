@@ -20,70 +20,44 @@
         <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-5 col-start-6 row-start-3">
             3
         </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
-            <h1 class="text-sm">Electricidad</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">kWh</p>
-        </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
-            <h1 class="text-sm">Diesel</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">litros</p>
-        </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
-            <h1 class="text-sm">Gas Natural</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">m³</p>
-        </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
-            <h1 class="text-sm">GLP</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">kg</p>
-        </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
-            <h1 class="text-sm">Residuos Sólidos</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">kg</p>
-        </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
-            <h1 class="text-sm">Transporte Aéreo</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">km</p>
-        </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
-            <h1 class="text-sm">Agua</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">litros</p>
-        </div>
+        
+        @for(recurso of recursos; track recurso){
+            <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8 flex flex-col justify-between">
+                <h1 class="text-lg">{{recurso.nombre}}</h1>
+                <p class="text-4xl font-bold mt-2">{{recurso.total_cantidad}}</p>
+                <p class="text-lg italic text-gray-600">{{recurso.unidad}}</p>
+            </div>
+        }
     </div>
-    <div class="grid grid-cols-5 grid-rows-10 gap-4  bg-back w-10/12 h-[150vh] mx-auto px-4 py-6 sm:px-6 lg:px-8">
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-3 flex items-center">
-            <form class="flex flex-col gap-2 w-full">
-                   <select name="recurso" title="recurso" class="custom-input text-sm" required>
-                        <option value="" disabled selected>Seleccione el tipo de fuente</option>
-                        @for (recurso of recursos; track recurso){
-                            <option value="{{ recurso.id }}">{{ recurso.nombre }} ({{ recurso.unidad }})</option>
-                        }
-                    </select>
-                    <div class="flex gap-2">
-                        <input type="number" placeholder="Mes" id="mes_periodo" name="mes_periodo" min="1" max="12" class="custom-input" required>
-                        <input type="number" placeholder="Año" id="año_periodo" name="año_periodo" min="1900" max="2100" class="custom-input" required>
-                    </div>
+    <div class="flex flex-col gap-4 bg-back w-10/12 h-auto mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        <div class="flex">
+            <div class="bg-dark-gray shadow-md p-3 rounded-2xl flex items-center w-4/12">
+                <form class="flex flex-col gap-2 w-full">
+                    <select name="recurso" title="recurso" [(ngModel)]="nuevaActividad.id_tipo_fuente" class="custom-input text-sm" required>
+                            <option value="" disabled selected>Seleccione el tipo de fuente</option>
+                            @for (recurso of recursos; track recurso){
+                                <option value="{{ recurso.id }}">{{ recurso.nombre }} ({{ recurso.unidad }})</option>
+                            }
+                        </select>
+                        <div class="flex gap-2">
+                            <input type="number" placeholder="Mes" [(ngModel)]="nuevaActividad.mes_periodo" id="mes_periodo" name="mes_periodo" min="1" max="12" class="custom-input" required>
+                            <input type="number" placeholder="Año" id="año_periodo" [(ngModel)]="nuevaActividad['año_periodo']" name="año_periodo" min="1900" max="2100" class="custom-input" required>
+                        </div>
 
-                    <input type="number" id="cantidad" placeholder='Cantidad' name="cantidad" class="custom-input" required>
+                        <input type="number" id="cantidad" placeholder='Cantidad' [(ngModel)]="nuevaActividad.cantidad" name="cantidad" class="custom-input" required>
 
-                    <input type="number" id="costo_mxn" placeholder="Costo (MXM)" name="costo_mxn" class="custom-input" required>
+                        <input type="number" id="costo_mxn" placeholder="Costo (MXM)" [(ngModel)]="nuevaActividad.costo_mxn" name="costo_mxn" class="custom-input" required>
 
-                    <input type="url" id="evidencia_url" placeholder="URL de evidencia(Opcional)" name="evidencia_url" class="custom-input">
+                        <input type="url" id="evidencia_url" placeholder="URL de evidencia(Opcional)" [(ngModel)]="nuevaActividad.evidencia_url" name="evidencia_url" class="custom-input">
 
-            </form>
+                </form>
+            </div>
+            <div class="p-2 rounded-2xl flex items-end ">
+                <button class="bg-green px-10 py-2 rounded-lg hover:bg-h-green transition-colors duration-300 shadow-md" (click)="guardarNuevaActividad()">Agregar</button>
+            </div>
         </div>
-
-        <div class="p-2 rounded-2xl col-start-3 row-start-3 flex items-end ">
-            <button class="bg-green px-10 py-2 rounded-lg hover:bg-h-green transition-colors duration-300 shadow-md">Agregar</button>
-        </div>
-
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-5 row-span-7 row-start-4 overflow-x-scroll">
+        
+        <div class="bg-dark-gray shadow-md p-4 rounded-2xl">
             <table class="min-w-full divide-y rounded-2xl overflow-hidden">
                 <thead class="bg-dark-green text-white">
                     <tr>
@@ -97,19 +71,19 @@
                     </tr>
                 </thead>
                 <tbody class="bg-gray-100 text-gray-800">
-                    <!-- Ejemplo de fila, reemplaza con datos dinámicos -->
-                    <tr>
-                        <td class="px-4 py-2 text-center">Electricidad</td>
-                        <td class="px-4 py-2 text-center">6</td>
-                        <td class="px-4 py-2 text-center">2024</td>
-                        <td class="px-4 py-2 text-center">1200</td>
-                        <td class="px-4 py-2 text-center">3500</td>
-                        <td class="px-4 py-2 text-center"><a href="#" class="text-blue-600 underline">Ver evidencia</a></td>
-                        <td class="px-4 py-2 text-center">
-                            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors duration-300">Eliminar</button>
-                        </td>
-                    </tr>
-                    <!-- Más filas aquí -->
+                    @for (actividad of actividades; track actividad){
+                        <tr>
+                            <td class="px-4 py-2 text-center">{{actividad.nombre_fuente}}</td>
+                            <td class="px-4 py-2 text-center">{{actividad.mes_periodo}}</td>
+                            <td class="px-4 py-2 text-center">{{actividad['año_periodo']}}</td>
+                            <td class="px-4 py-2 text-center">{{actividad.cantidad}}</td>
+                            <td class="px-4 py-2 text-center">{{actividad.costo_mxn}}</td>
+                            <td class="px-4 py-2 text-center"><a href='{{actividad.evidencia_url}}' class="text-blue-600 underline">Ver evidencia</a></td>
+                            <td class="px-4 py-2 text-center">
+                                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors duration-300" (click)="eliminarActividad(actividad.id_actividad)">Eliminar</button>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
