@@ -4,15 +4,17 @@ import { Api } from '../../services/api';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [RouterModule, FormsModule, HttpClientModule], // <-- Agrega HttpClientModule aquí
+  imports: [RouterModule, FormsModule, HttpClientModule, CommonModule], // <-- Agrega HttpClientModule aquí
   providers: [Api],
   templateUrl: './sign-up.html',
   styleUrl: './sign-up.css'
 })
 export class SignUp {
+  openModal = false;
   estadosMexico: string[] = [ "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "Estado de México", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" ];
   sectores: string[] = [ "Manufactura", "Alimentos", "Textil", "Servicios", "Agricultura", "Construcción", "Energía (Electricidad)", "Transporte", "Minería", "Tecnología", "Salud", "Turismo", "Energías Renovables", "Biotecnología", "Economía Circular", "Acuicultura/Salmonicultura", "Finanzas Sostenibles", "Educación Digital", "Ciberseguridad", "Logística y Cadena Suministro", "Farmacéutico" ];
 

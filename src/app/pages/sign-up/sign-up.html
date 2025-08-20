@@ -1,78 +1,264 @@
-  <body class="bg-white text-gray-800 flex flex-col min-h-screen">
-    <!-- Main content container -->
-    <main class="flex-grow bg-back max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center ">
-      <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-8xl">
-        <!-- Izquierda: Imagen -->
-        <div class="flex flex-col items-center gap-1">
-          <img
-            src="assets/logos/LogoColoresTrasnparente.png"
-            alt="Eco Metrix Logo"
-            class="w-[400px] h-auto object-contain rounded-lg hide-below-770"
-          />
-          <div class="italic text-center text-3xl font-semibold hide-below-770 text-dark-green">
-            Mide hoy, mejora mañana
-          </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 w-full max-w-lg mx-auto">
-          <h2 class="text-center text-xl font-bold mb-6 text-black">
-            Registro de usuario
-          </h2>
-
-          <form class="space-y-4">
-            <input name="nombre_empresa" type="text" [(ngModel)]="nombre_empresa" placeholder="Nombre Empresa" class="custom-input text-sm" required />
-            <input name="gmail" type="email" [(ngModel)]="gmail" placeholder="Correo electrónico" class="custom-input text-sm" required />
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input name="contrasena" type="password" [(ngModel)]="contrasena" placeholder="Contraseña" class="custom-input text-sm" required />
-                <input name="confirmar_contrasena" type="password" [(ngModel)]="confirmar_contrasena" placeholder="Confirmar contraseña" class="custom-input text-sm" required />
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <select name="estado" title="Estado" [(ngModel)]="estado" class="custom-input text-sm" required>
-                <option value="" disabled selected>Estado</option>
-                @for (estado of estadosMexico; track estado)
-                {
-                  <option value="estado">{{estado}}</option>
-                }
-              </select>
-              <input name="num_empleados" type="number" [(ngModel)]="num_empleados" placeholder="Numero de empleados" class="custom-input text-sm" />
-            </div>
-
-            
-            <select name="sector" title="sector" [(ngModel)]="sector" class="custom-input text-sm" required>
-              <option value="" disabled selected>Sector</option>
-              @for (sector of sectores; track sector)
-              {
-                <option value="sector">{{sector}}</option>
-              }
-            </select>
-            
-            <input name="actividad_principal" type="text" [(ngModel)]="actividad_principal" placeholder="Actividad principal" class="custom-input text-sm" />
-            
-
-            <div class="text-center text-sm">
-              <input name="acepta_terminos" type="checkbox" [(ngModel)]="acepta_terminos" id="terminos" class="mt-1" required />
-              <label for="terminos">
-                He leído y acepto el
-                <a href="#" class="text-green-700 underline"
-                  >Aviso de privacidad, términos y condiciones</a
-                >.
-              </label>
-            </div>
-
-            <div class="flex justify-center gap-4 mt-4">
-              <button routerLink="/" routerLinkActive="router-link-active" type="button" class="w-36 py-3 rounded-full text-sm bg-gray-600 text-white hover:bg-gray-700">
-                Volver
-              </button>
-
-              <button (click)="registrarUsuario()" type="submit" class="w-36 py-3 rounded-full text-sm text-white bg-green hover:bg-h-green">
-                Continuar
-              </button>
-            </div>
-          </form>
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
+  <!-- Main content container -->
+  <main
+    class="flex-grow bg-back max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center"
+  >
+    <div
+      class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-8xl"
+    >
+      <!-- Izquierda: Imagen -->
+      <div class="flex flex-col items-center gap-1">
+        <img
+          src="assets/logos/LogoColoresTrasnparente.png"
+          alt="Eco Metrix Logo"
+          class="w-[400px] h-auto object-contain rounded-lg hide-below-770"
+        />
+        <div
+          class="italic text-center text-3xl font-semibold hide-below-770 text-dark-green"
+        >
+          Mide hoy, mejora mañana
         </div>
       </div>
-    </main>
-  </body>
 
+      <div
+        class="bg-white rounded-lg shadow-lg p-6 md:p-8 w-full max-w-lg mx-auto"
+      >
+        <h2 class="text-center text-xl font-bold mb-6 text-black">
+          Registro de usuario
+        </h2>
+
+        <form class="space-y-4">
+          <input
+            name="nombre_empresa"
+            type="text"
+            [(ngModel)]="nombre_empresa"
+            placeholder="Nombre Empresa"
+            class="custom-input text-sm"
+            required
+          />
+          <input
+            name="gmail"
+            type="email"
+            [(ngModel)]="gmail"
+            placeholder="Correo electrónico"
+            class="custom-input text-sm"
+            required
+          />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              name="contrasena"
+              type="password"
+              [(ngModel)]="contrasena"
+              placeholder="Contraseña"
+              class="custom-input text-sm"
+              required
+            />
+            <input
+              name="confirmar_contrasena"
+              type="password"
+              [(ngModel)]="confirmar_contrasena"
+              placeholder="Confirmar contraseña"
+              class="custom-input text-sm"
+              required
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <select
+              name="estado"
+              title="Estado"
+              [(ngModel)]="estado"
+              class="custom-input text-sm"
+              required
+            >
+              <option value="" disabled selected>Estado</option>
+              @for (estado of estadosMexico; track estado) {
+              <option value="estado">{{ estado }}</option>
+              }
+            </select>
+            <input
+              name="num_empleados"
+              type="number"
+              [(ngModel)]="num_empleados"
+              placeholder="Numero de empleados"
+              class="custom-input text-sm"
+            />
+          </div>
+
+          <select
+            name="sector"
+            title="sector"
+            [(ngModel)]="sector"
+            class="custom-input text-sm"
+            required
+          >
+            <option value="" disabled selected>Sector</option>
+            @for (sector of sectores; track sector) {
+            <option value="sector">{{ sector }}</option>
+            }
+          </select>
+
+          <input
+            name="actividad_principal"
+            type="text"
+            [(ngModel)]="actividad_principal"
+            placeholder="Actividad principal"
+            class="custom-input text-sm"
+          />
+
+          <div class="text-center text-sm">
+            <input
+              name="acepta_terminos"
+              type="checkbox"
+              [(ngModel)]="acepta_terminos"
+              id="terminos"
+              class="mt-1"
+              required
+            />
+            <label for="terminos">
+              He leído y acepto el
+              <button
+                type="button"
+                class="text-green-700 underline cursor-pointer"
+                (click)="openModal = true"
+              >
+                Aviso de privacidad, términos y condiciones</button
+              >.
+            </label>
+          </div>
+        
+
+<div
+  *ngIf="openModal"
+  class="fixed inset-0 flex items-center justify-center z-50"
+  style="background-color: rgba(0,0,0,0.2);"
+>
+  <!-- Ventana principal más grande -->
+  <div class="bg-white rounded-lg w-11/12 md:w-3/4 relative max-h-[85vh]">
+
+    <!-- Botón X en su posición original -->
+    <button
+      (click)="openModal = false"
+      class="absolute top-3 right-6 text-gray-600 hover:text-gray-800 font-bold text-2xl z-10 cursor-pointer"
+    >
+      ✕
+    </button>
+
+    <!-- Contenedor scrollable con padding superior mayor -->
+    <div class="overflow-y-auto max-h-[85vh] pt-10 px-6">
+
+      <!-- Título -->
+      <h2 class="text-center text-xl font-bold mb-6">
+        Aviso de privacidad - Términos y condiciones
+      </h2>
+
+      <!-- Contenido del aviso -->
+      <div class="space-y-4 text-sm text-gray-800">
+        <p><strong>I. Identidad y Domicilio del Responsable</strong></p>
+        <p>
+          EcoMetrix, proyecto desarrollado con fines educativos y de impacto social para brindar a las PYMEs mexicanas una herramienta digital que permita medir y mejorar su impacto ambiental, con domicilio en Av. Universidad Tecnológica No. 1000, Tierra Negra, Xicotepec de Juárez, Pue., es el responsable del tratamiento de los datos personales que se recaban a través de su plataforma digital, conforme a lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+        </p>
+
+        <p><strong>II. Finalidades del Tratamiento de Datos Personales</strong></p>
+        <p>Los datos personales que recabamos serán utilizados para las siguientes finalidades:</p>
+        <p><strong>Finalidades primarias:</strong></p>
+        <ul class="list-disc list-inside ml-4">
+          <li>Registro de usuarios en la plataforma EcoMetrix.</li>
+          <li>Contacto y comunicación con los usuarios para la gestión de su cuenta.</li>
+          <li>Personalización de dashboards y generación de métricas ambientales adaptadas.</li>
+          <li>Elaboración de informes y reportes de impacto ambiental.</li>
+          <li>Cumplimiento de obligaciones legales y de seguridad.</li>
+        </ul>
+
+        <p><strong>Finalidades secundarias:</strong></p>
+        <ul class="list-disc list-inside ml-4">
+          <li>Envío de información sobre actualizaciones de la plataforma.</li>
+          <li>Aplicación de encuestas para mejorar el servicio.</li>
+          <li>Publicación de casos de éxito y estadísticas generales del uso de la plataforma.</li>
+        </ul>
+
+        <p><strong>III. Datos Personales Recabados</strong></p>
+        <ul class="list-disc list-inside ml-4">
+          <li>Nombre de la empresa.</li>
+          <li>Correo electrónico.</li>
+          <li>Estado.</li>
+          <li>Sector.</li>
+          <li>Número de empleados.</li>
+          <li>Actividad principal.</li>
+          <li>Código postal.</li>
+        </ul>
+        <p>Nota: No se recabarán datos personales sensibles.</p>
+
+        <p><strong>IV. Opciones y Medios para Limitar el Uso o Divulgación de los Datos</strong></p>
+        <p>
+          El titular puede limitar el uso o divulgación de sus datos personales enviando un correo a: <strong>contacto@ecometrix.mx</strong>, especificando los datos que desea limitar, incluyendo su identificación como titular.
+        </p>
+
+        <p><strong>V. Medios para Ejercer los Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición)</strong></p>
+        <p>El titular tiene derecho a:</p>
+        <ul class="list-disc list-inside ml-4">
+          <li>Acceder a sus datos personales que poseemos.</li>
+          <li>Solicitar la rectificación de sus datos si son inexactos o incompletos.</li>
+          <li>Solicitar la cancelación de sus datos.</li>
+          <li>Oponerse al tratamiento de sus datos para fines específicos.</li>
+        </ul>
+        <p>
+          Para ejercer estos derechos, deberá enviar una solicitud al correo: <strong>soporte.clientes@ecometrix.mx</strong>, incluyendo:
+        </p>
+        <ul class="list-disc list-inside ml-4">
+          <li>Nombre del titular.</li>
+          <li>Nombre de la empresa.</li>
+          <li>Derecho que desea ejercer.</li>
+          <li>Descripción clara de los datos involucrados.</li>
+          <li>Copia de identificación oficial vigente.</li>
+        </ul>
+        <p>Responderemos en un plazo no mayor a 20 días hábiles.</p>
+
+        <p><strong>VI. Transferencias de Datos Personales</strong></p>
+        <p>EcoMetrix no realiza transferencias de datos personales a terceros sin su consentimiento, salvo en los casos previstos por la Ley. En su caso, se le notificará y se le solicitará el consentimiento correspondiente.</p>
+
+        <p><strong>VII. Uso de Tecnologías de Rastreo</strong></p>
+        <p>EcoMetrix podrá utilizar cookies y otras tecnologías para monitorear su comportamiento dentro del sitio web. Esta información se utilizará para fines estadísticos y para mejorar la experiencia del usuario. Usted puede deshabilitar estas tecnologías desde la configuración de su navegador.</p>
+
+        <p><strong>VIII. Cambios al Aviso de Privacidad</strong></p>
+        <p>EcoMetrix se reserva el derecho de realizar modificaciones al presente aviso de privacidad. Dichos cambios serán publicados oportunamente en el sitio web oficial de la plataforma: <strong>www.ecometrix.com</strong>.</p>
+
+        <p><strong>IX. Consentimiento</strong></p>
+        <p>
+          Al proporcionar sus datos personales y utilizar la plataforma EcoMetrix, usted otorga su consentimiento para que estos sean tratados conforme a los términos y condiciones de este aviso de privacidad.
+        </p>
+
+        <p><strong>Fecha de última actualización:</strong> 16 de Julio de 2025.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+          <div class="flex justify-center gap-4 mt-4">
+            <button
+              routerLink="/"
+              routerLinkActive="router-link-active"
+              type="button"
+              class="w-36 py-3 rounded-full text-sm bg-gray-600 text-white hover:bg-gray-700"
+            >
+              Volver
+            </button>
+
+            <button
+              (click)="registrarUsuario()"
+              type="submit"
+              class="w-36 py-3 rounded-full text-sm text-white bg-green hover:bg-h-green"
+            >
+              Continuar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
