@@ -1,230 +1,275 @@
 <app-navbar></app-navbar>
-<div class=" m-auto px-16 max-w-[1200px] mx-auto scroll-smooth bg-back">
-      <section class="py-12 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-6">
-          <!-- Columna 1: Imagen pegada a la izquierda -->
-          <div class="flex justify-start">
-            <img
-              src="assets/INDEX/Rectangle40.png"
-              alt="Imagen principal"
-              class="w-full h-auto max-h-[400px] object-contain"
-            />
-          </div>
+<div class="m-auto px-16 max-w-[1200px] mx-auto scroll-smooth bg-back">
+  <section class="py-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-6">
+      <!-- Columna 1: Imagen pegada a la izquierda -->
+      <div class="flex justify-start">
+        <img
+          src="assets/INDEX/Rectangle40.png"
+          alt="Imagen principal"
+          class="w-full h-auto max-h-[400px] object-contain"
+        />
+      </div>
 
-          <!-- Columnas 2 y 3: Texto -->
-          <div class="md:col-span-2 flex flex-col justify-start">
-            <h1 class="text-3xl font-bold mb-4 text-left">
-              EcoMetrix: Datos inteligentes para un futuro sostenible
-            </h1>
-            <p class="mb-4 text-left">
-              En un mundo donde cada decisión cuenta,
-              <strong>EcoMetrix</strong> es la plataforma digital que transforma
-              información en acción. Con una interfaz intuitiva y herramientas
-              personalizables, podrás
-              <strong>registrar, monitorear y evaluar</strong> tus indicadores
-              ambientales y operativos en tiempo real.
-            </p>
-            <p class="mb-6 text-left">
-              <strong>Porque medir es el primer paso para mejorar</strong>,
-              EcoMetrix te acompaña en cada etapa, ayudándote a cumplir con
-              regulaciones, mejorar tu eficiencia y comunicar tus resultados de
-              forma clara y transparente.
-            </p>
-            <div class="flex gap-4">
-              <button class="bg-dark-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-dark-green">Comenzar gratis</button>
-              <button class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Comparar planes</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Cómo funciona -->
-      <section class="py-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 items-start gap-6">
-          <!-- Columnas 1 y 2: Texto a la izquierda -->
-          <div class="md:col-span-2 flex flex-col justify-start">
-            <h2 class="text-xl font-bold mb-4">¿Cómo funciona?</h2>
-            <ol class="list-decimal list-inside space-y-2">
-              <li>
-                <strong>Registra tus datos:</strong><br />
-                Ingresa información sobre consumo energético, agua, residuos y
-                huella de carbono.
-              </li>
-              <li>
-                <strong>Analiza en tiempo real:</strong><br />
-                Visualiza métricas e indicadores claros en paneles intuitivos.
-              </li>
-              <li>
-                <strong>Optimiza tus recursos:</strong><br />
-                Identifica oportunidades de mejora para reducir costos e impacto
-                ambiental.
-              </li>
-              <li>
-                <strong>Comunica tus logros:</strong><br />
-                Genera reportes listos para compartir con tu equipo, clientes o
-                autoridades.
-              </li>
-            </ol>
-          </div>
-
-          <!-- Columnas 3 y 4: Imagen a la derecha (más grande) -->
-          <div class="md:col-span-2 flex justify-end">
-            <img
-              src="assets/INDEX/Rectangle41.png"
-              alt="Cómo funciona"
-              class="w-full h-auto max-h-[300px] object-contain"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- Beneficios -->
-      <section class="py-8">
-        <h2 class="text-xl font-bold mb-4">Beneficios de EcoMetrix</h2>
-        <ul class="list-disc list-inside space-y-1">
-          <li>Toma de decisiones basada en datos confiables y actualizados.</li>
-          <li>
-            Cumplimiento normativo más sencillo con reportes automatizados.
-          </li>
-          <li>
-            Ahorro de tiempo y costos mediante la optimización de recursos.
-          </li>
-          <li>
-            Imagen empresarial responsable, alineada con los Objetivos de
-            Desarrollo Sostenible (ODS).
-          </li>
-          <li>Escalabilidad, para adaptarse al crecimiento de tu negocio.</li>
-        </ul>
-      </section>
-
-      <!-- Sobre nosotros -->
-      <section class="py-8" id="sobre-nosotros">
-        <h2 class="text-xl font-bold mb-4">Sobre nosotros</h2>
-        <p>
-          En EcoMetrix creemos que la sostenibilidad no es solo una meta, sino
-          un camino que se construye día a día. Nuestro equipo combina
-          experiencia en tecnología, análisis de datos y gestión ambiental para
-          crear una herramienta que ayude a empresas de todos los tamaños a
-          alcanzar un impacto positivo.
+      <!-- Columnas 2 y 3: Texto -->
+      <div class="md:col-span-2 flex flex-col justify-start">
+        <h1 class="text-3xl font-bold mb-4 text-left">
+          EcoMetrix: Datos inteligentes para un futuro sostenible
+        </h1>
+        <p class="mb-4 text-left">
+          En un mundo donde cada decisión cuenta,
+          <strong>EcoMetrix</strong> es la plataforma digital que transforma
+          información en acción. Con una interfaz intuitiva y herramientas
+          personalizables, podrás
+          <strong>registrar, monitorear y evaluar</strong> tus indicadores
+          ambientales y operativos en tiempo real.
         </p>
-      </section>
-
-      <!-- Planes -->
-      <section id="planes" class="py-8">
-        <h2 class="text-xl font-bold mb-8 text-center">Planes de membresía</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <!-- Gratis -->
-          <div class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col">
-            <div>
-              <h3 class="font-bold text-lg mb-2">Gratuito</h3>
-              <p class="mb-2 text-sm">
-                Ideal para micro empresas que inician <br />
-                su medición de impacto.
-              </p>
-              <strong>Incluye:</strong>
-              <ul class="list-disc list-inside text-sm mb-2">
-                <li>Creación de cuenta</li>
-                <li>
-                  Ingreso y registro de datos de consumo (energía, agua,
-                  residuos, emisiones)
-                </li>
-                <li>Panel de métricas básicas</li>
-                <li>Hasta 3 indicadores activos</li>
-              </ul>
-              <strong>No incluye:</strong>
-              <ul class="list-disc list-inside text-sm mb-2">
-                <li>Reportes exportables (PDF, Excel)</li>
-                <li>Sección de consejos personalizados para optimización</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Premium Mensual -->
-          <div class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-lg mb-2">Premium Mensual</h3>
-              <p class="mb-2 text-sm">
-                Para empresas que requieren métricas avanzadas y reportes
-                personalizados.
-              </p>
-              <strong>Incluye todo lo del plan Gratuito, más:</strong>
-              <ul class="list-disc list-inside text-sm mb-2">
-                <li>Reportes exportables (PDF)</li>
-                <li>
-                  Sección de consejos personalizados para reducir costos y
-                  emisiones
-                </li>
-                <li>Indicadores ilimitados</li>
-              </ul>
-            </div>
-            <div class="flex justify-center mt-4">
-              <button class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Comenzar</button>
-            </div>
-          </div>
-
-          <!-- Premium Anual -->
-          <div class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-lg mb-2">Premium Anual</h3>
-              <p class="mb-2 text-sm">
-                (precio según tamaño de la PYME)<br />
-                Mismas funciones que el Premium Mensual, pero con pago único
-                anual y ahorro garantizado.
-              </p>
-              <p class="text-sm">
-                <strong>Además:</strong> Ahorra 10% respecto al plan mensual
-              </p>
-            </div>
-            <div class="flex justify-center mt-4">
-              <button class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Comenzar</button>
-            </div>
-          </div>
+        <p class="mb-6 text-left">
+          <strong>Porque medir es el primer paso para mejorar</strong>,
+          EcoMetrix te acompaña en cada etapa, ayudándote a cumplir con
+          regulaciones, mejorar tu eficiencia y comunicar tus resultados de
+          forma clara y transparente.
+        </p>
+        <div class="flex gap-4">
+          <button
+            class="bg-dark-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-dark-green"
+          >
+            Comenzar gratis
+          </button>
+          <button
+            class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green"
+          >
+            Comparar planes
+          </button>
         </div>
-      </section>
-
-      <!-- Testimonios -->
-      <section class="py-8">
-        <h2 class="text-xl font-bold mb-4">Testimonios</h2>
-        <p class="italic">
-          “EcoMetrix nos ayudó a entender en qué áreas podíamos reducir costos y
-          ser más responsables con el medio ambiente. En pocos meses vimos
-          resultados.” —
-          <strong>Ana López, Gerente de Operaciones, VerdeVivo S.A.</strong>
-        </p>
-        <p class="italic mt-2">
-          “La plataforma es muy intuitiva y los reportes nos han permitido
-          cumplir con normativas sin complicaciones.” —
-          <strong>Carlos Méndez, Director, BioTech MX</strong>
-        </p>
-      </section>
-
-      <!-- Contacto -->
-      <section class="py-8" id="contacto">
-        <h2 class="text-xl font-bold mb-4">Contáctanos</h2>
-        <form class="space-y-4 max-w-lg">
-          <input
-            type="text"
-            placeholder="Ingrese su nombre completo"
-            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
-          />
-          <input
-            type="text"
-            placeholder="Ingrese el nombre de su empresa"
-            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
-          />
-          <input
-            type="email"
-            placeholder="Ingrese su correo electrónico"
-            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
-          />
-          <textarea
-            placeholder="Ingrese su mensaje"
-            class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
-          ></textarea>
-          <button type="submit" class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green">Enviar</button>
-        </form>
-      </section>
+      </div>
     </div>
+  </section>
 
+  <!-- Cómo funciona -->
+  <section class="py-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 items-start gap-6">
+      <!-- Columnas 1 y 2: Texto a la izquierda -->
+      <div class="md:col-span-2 flex flex-col justify-start">
+        <h2 class="text-xl font-bold mb-4">¿Cómo funciona?</h2>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>
+            <strong>Registra tus datos:</strong><br />
+            Ingresa información sobre consumo energético, agua, residuos y
+            huella de carbono.
+          </li>
+          <li>
+            <strong>Analiza en tiempo real:</strong><br />
+            Visualiza métricas e indicadores claros en paneles intuitivos.
+          </li>
+          <li>
+            <strong>Optimiza tus recursos:</strong><br />
+            Identifica oportunidades de mejora para reducir costos e impacto
+            ambiental.
+          </li>
+          <li>
+            <strong>Comunica tus logros:</strong><br />
+            Genera reportes listos para compartir con tu equipo, clientes o
+            autoridades.
+          </li>
+        </ol>
+      </div>
+
+      <!-- Columnas 3 y 4: Imagen a la derecha (más grande) -->
+      <div class="md:col-span-2 flex justify-end">
+        <img
+          src="assets/INDEX/Rectangle41.png"
+          alt="Cómo funciona"
+          class="w-full h-auto max-h-[300px] object-contain"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="py-8">
+    <h2 class="text-xl font-bold mb-4">Beneficios de EcoMetrix</h2>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Toma de decisiones basada en datos confiables y actualizados.</li>
+      <li>Cumplimiento normativo más sencillo con reportes automatizados.</li>
+      <li>Ahorro de tiempo y costos mediante la optimización de recursos.</li>
+      <li>
+        Imagen empresarial responsable, alineada con los Objetivos de Desarrollo
+        Sostenible (ODS).
+      </li>
+      <li>Escalabilidad, para adaptarse al crecimiento de tu negocio.</li>
+    </ul>
+  </section>
+
+  <!-- Sobre nosotros -->
+  <section class="py-8" id="sobre-nosotros">
+    <h2 class="text-xl font-bold mb-4">Sobre nosotros</h2>
+    <p>
+      En EcoMetrix creemos que la sostenibilidad no es solo una meta, sino un
+      camino que se construye día a día. Nuestro equipo combina experiencia en
+      tecnología, análisis de datos y gestión ambiental para crear una
+      herramienta que ayude a empresas de todos los tamaños a alcanzar un
+      impacto positivo.
+    </p>
+  </section>
+
+  <!-- Planes -->
+  <section id="planes" class="py-8">
+    <h2 class="text-xl font-bold mb-8 text-center">Planes de membresía</h2>
+    <div class="grid md:grid-cols-3 gap-6 items-stretch">
+      <!-- Gratis -->
+      <div
+        class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col justify-between h-full"
+      >
+        <div>
+          <h3 class="font-bold text-lg mb-2">Gratuito</h3>
+          <p class="mb-2 text-sm">
+            Ideal para micro empresas que inician <br />
+            su medición de impacto.
+          </p>
+          <strong>Incluye:</strong>
+          <ul class="list-disc list-inside text-sm mb-2">
+            <li>Creación de cuenta</li>
+            <li>
+              Ingreso y registro de datos de consumo (energía, agua, residuos,
+              emisiones)
+            </li>
+            <li>Panel de métricas básicas</li>
+            <li>Hasta 3 indicadores activos</li>
+          </ul>
+          <strong>No incluye:</strong>
+          <ul class="list-disc list-inside text-sm mb-2">
+            <li>Reportes exportables (PDF, Excel)</li>
+            <li>Sección de consejos personalizados para optimización</li>
+          </ul>
+        </div>
+        <div class="mt-4">
+          <div class="text-center font-semibold">Precio: $0 MXN</div>
+          <div class="flex justify-center mt-4">
+            <button
+              class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green"
+            >
+              Comenzar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Mensual -->
+      <div
+        class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col justify-between h-full"
+      >
+        <div>
+          <h3 class="font-bold text-lg mb-2">Premium Mensual</h3>
+          <p class="mb-2 text-sm">
+            Para empresas que requieren métricas avanzadas y reportes
+            personalizados.
+          </p>
+          <strong>Incluye todo lo del plan Gratuito, más:</strong>
+          <ul class="list-disc list-inside text-sm mb-2">
+            <li>Reportes exportables (PDF)</li>
+            <li>
+              Sección de consejos personalizados para reducir costos y emisiones
+            </li>
+            <li>Indicadores ilimitados</li>
+          </ul>
+        </div>
+        <div class="mt-4">
+          <div class="text-center font-semibold">
+            Precio: <br />
+            Pequeña empresa: $5,000 MXN <br />
+            Mediana empresa: $7,500 MXN
+          </div>
+          <div class="flex justify-center mt-4">
+            <button
+              class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green"
+            >
+              Comenzar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Anual -->
+      <div
+        class="bg-blue rounded-lg p-6 shadow-[0 2px 6px rgba(0,0,0,0.1)] flex flex-col justify-between h-full"
+      >
+        <div>
+          <h3 class="font-bold text-lg mb-2">Premium Anual</h3>
+          <p class="mb-2 text-sm">
+            (precio según tamaño de la PYME)<br />
+            Mismas funciones que el Premium Mensual, pero con pago único anual y
+            ahorro garantizado.
+          </p>
+          <p class="text-sm mb-2">
+            <strong>Además:</strong> Ahorra 10% respecto al plan mensual
+          </p>
+        </div>
+        <div class="mt-4">
+          <div class="text-center font-semibold">
+            Precio: <br />
+            Pequeña empresa: $54,000 MXN <br />
+            Mediana empresa: $75,600 MXN
+          </div>
+          <div class="flex justify-center mt-4">
+            <button
+              class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green"
+            >
+              Comenzar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="py-8">
+    <h2 class="text-xl font-bold mb-4">Testimonios</h2>
+    <p class="italic">
+      “EcoMetrix nos ayudó a entender en qué áreas podíamos reducir costos y ser
+      más responsables con el medio ambiente. En pocos meses vimos resultados.”
+      —
+      <strong>Ana López, Gerente de Operaciones, VerdeVivo S.A.</strong>
+    </p>
+    <p class="italic mt-2">
+      “La plataforma es muy intuitiva y los reportes nos han permitido cumplir
+      con normativas sin complicaciones.” —
+      <strong>Carlos Méndez, Director, BioTech MX</strong>
+    </p>
+  </section>
+
+  <!-- Contacto -->
+  <section class="py-8" id="contacto">
+    <h2 class="text-xl font-bold mb-4">Contáctanos</h2>
+    <form class="space-y-4 max-w-lg">
+      <input
+        type="text"
+        placeholder="Ingrese su nombre completo"
+        class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
+      />
+      <input
+        type="text"
+        placeholder="Ingrese el nombre de su empresa"
+        class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
+      />
+      <input
+        type="email"
+        placeholder="Ingrese su correo electrónico"
+        class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
+      />
+      <textarea
+        placeholder="Ingrese su mensaje"
+        class="w-full p-3 rounded-md bg-light-gray border-0 outline-0 focus:ring-2 focus:ring-blue"
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-green text-white px-6 py-2 rounded-full transition duration-300 ease-in hover:bg-h-green"
+      >
+        Enviar
+      </button>
+    </form>
+  </section>
+</div>
 
 <app-footer></app-footer>
