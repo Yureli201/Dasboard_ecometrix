@@ -1,24 +1,64 @@
 <app-navbar-user></app-navbar-user>
 <body class="bg-white text-gray-800 min-h-screen flex flex-col m-0">
-    <div class="grid grid-cols-7 grid-rows-9 gap-4 bg-back w-10/12 h-[92vh] mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center">
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-2 ">
+    <div class="grid grid-cols-7 grid-rows-9 gap-4 bg-back w-10/12 h-[100vh] mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center">
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-2 flex flex-col justify-between">
             <h1 class="text-lg">Huella de carbono actual</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">Toneladas de CO2</p>
+            <p class="text-4xl font-bold mt-2">{{this.huella}}</p>
+            <p class="text-sm italic text-gray-600">kg CO₂e</p>
         </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-2 col-start-3">
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-2 col-start-3 flex flex-col justify-between">
             <h1 class="text-lg">Predicción de huella de carbono</h1>
-            <p class="text-4xl font-bold mt-2">12.34</p>
-            <p class="text-sm italic text-gray-600">Toneladas de CO2</p>
+            <div class="text-4xl font-bold mt-2 flex items-center justify-center gap-2">
+                {{this.prediccion}} 
+                <h1 *ngIf="this.trend === 'sube'" class="text-red-500 text-3xl">▲</h1>
+                <h1 *ngIf="this.trend === 'baja'" class="text-green-500 text-3xl">▼</h1>
+            </div>
+            <p class="text-sm italic text-gray-600">kg CO₂e</p>
         </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-3 row-span-2 col-start-5">
-            1
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-2 col-start-5 flex flex-col justify-center items-center">
+            <h2 class="text-lg text-center mb-4">Huella actual vs. prediccion</h2>
+ 
+            <ngx-charts-bar-horizontal
+                [view]="[300, 100]"
+                [scheme]="customColorScheme"
+                [results]="datosComparativa"
+                [gradient]="false"
+                [yAxis]="true"
+                [showDataLabel]="true"
+                [animations]="true">
+             </ngx-charts-bar-horizontal>
         </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-5 row-span-5 row-start-3">
-            2
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-1 row-span-2 col-start-7 flex flex-col justify-evenly">
+            <button class="bg-green px-4 py-2 rounded-lg hover:bg-h-green transition-colors duration-300 shadow-md" (click)="ngOnInit()">Actualizar</button>
+            <button class="bg-dark-green px-4 py-2 rounded-lg hover:bg-h-dark-green text-amber-50 transition-colors duration-300 shadow-md mt-2" (click)="generarReportePDF()">Exportar</button>
         </div>
-        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-5 col-start-6 row-start-3">
-            3
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-5 row-span-5 row-start-3 flex flex-col items-center justify-center">
+            <h2 class="text-lg text-center mb-4">Historial de huella de carbono</h2>
+
+            <ngx-charts-bar-vertical class="w-10/12"
+                [view]="[800, 350]"
+                [scheme]="customColorScheme"
+                [results]="datosGrafica"
+                [gradient]="false"
+                [xAxis]="true"
+                [yAxis]="true"
+                [legend]="false"
+                [showDataLabel]="true"
+                [animations]="true">
+            </ngx-charts-bar-vertical>
+
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-5 col-start-6 row-start-3 flex flex-col items-center justify-center">
+            <h2 class="text-lg text-center mb-4">Distribución de Gasto por Categoría</h2>
+
+            <ngx-charts-pie-grid
+                [results]="datosGasto"
+                [view]="[450, 350]"
+                [animations]="true"
+                [tooltipDisabled]="false"
+                [scheme]="customColorScheme"
+            >
+            </ngx-charts-pie-grid>
         </div>
         
         @for(recurso of recursos; track recurso){
@@ -96,7 +136,7 @@
             <div class="bg-green rounded-2xl col-span-1"></div>
             <div class="bg-green rounded-2xl col-span-1"></div>
         </div>
-        <h1 class="text-2xl font-bold mb-6 relative bottom-5/12">Parece que no tienes acceso, <a routerLink="/a" class="text-gray hover:text-dark-gray">actualize su plan</a> para poder ver el contenido </h1>
+        <h1 class="text-2xl font-bold mb-6 relative bottom-5/12">Parece que no tienes acceso, <a routerLink="/planes" class="text-gray hover:text-dark-gray">actualize su plan</a> para poder ver el contenido </h1>
     </div>
 </body>
     
