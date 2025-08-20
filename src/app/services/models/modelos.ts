@@ -12,4 +12,6 @@ export interface TipoFuente {
     id: number;
     nombre: string;
     unidad: string;
+    total_cantidad?: number;
+    total_costo?: number;
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders  } from '@angular/common/http';
 import { Usuario } from './models/modelos';
 
 @Injectable({
@@ -15,18 +15,36 @@ export class Api {
 
   constructor(private http: HttpClient) { }
 
+  //header
+    private getHeaders(): HttpHeaders {
+    const token = sessionStorage.getItem('authToken');
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  }
+
   // Autenticación
   registrarUsuario(usuario:Usuario){
-    return this.http.post(`${this.URL_AUTH}register`, usuario);
+    return this.http.post(`${this.URL_AUTH}register`, usuario)
   }
   loginUsuario(login:any){
-    return this.http.post(`${this.URL_AUTH}login`, login);
+    return this.http.post(`${this.URL_AUTH}login`, login)
   }
 
+  //Actividades
+  obtenerActividades(id_usuario: number, mes: number, año: number) {
+    return this.http.get(`${this.URL_DATA}actividad/${id_usuario}/month/${mes}/age/${año}`)
+  }
+  agregarActividad(id_usuario:number, actividad:any){
+    return this.http.post(`${this.URL_DATA}actividad/${id_usuario}`, actividad)
+  }
+  eliminarActividad(id_actividad:number){
+    return this.http.delete(`${this.URL_DATA}actividad/${id_actividad}`)
+  }
 
-  /*Usuarios
-  obtenerUsuarios(){
-    return this.http.get(`${this.URL_USER}profile`);
+/*
+  obtenerUsuario() {
+    const headers = this.getHeaders();
+    return this.http.get(`${this.URL_USER}profile`, { headers });
   }*/
-
 }
