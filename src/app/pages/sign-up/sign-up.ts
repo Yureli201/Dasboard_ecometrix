@@ -10,10 +10,12 @@ import { routes } from '../../app.routes';
   selector: 'app-sign-up',
   imports: [RouterModule, FormsModule, HttpClientModule], // <-- Agrega HttpClientModule aquí
   providers: [Api, Router],
+
   templateUrl: './sign-up.html',
   styleUrl: './sign-up.css'
 })
 export class SignUp {
+  openModal = false;
   estadosMexico: string[] = [ "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "Estado de México", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" ];
   sectores: string[] = [ "Manufactura", "Alimentos", "Textil", "Servicios", "Agricultura", "Construcción", "Energía (Electricidad)", "Transporte", "Minería", "Tecnología", "Salud", "Turismo", "Energías Renovables", "Biotecnología", "Economía Circular", "Acuicultura/Salmonicultura", "Finanzas Sostenibles", "Educación Digital", "Ciberseguridad", "Logística y Cadena Suministro", "Farmacéutico" ];
 
