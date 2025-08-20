@@ -1,0 +1,128 @@
+<app-navbar-user></app-navbar-user>
+<body class="bg-white text-gray-800 min-h-screen flex flex-col m-0">
+    <div class="grid grid-cols-7 grid-rows-9 gap-4 bg-back w-10/12 h-[92vh] mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center">
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-2 ">
+            <h1 class="text-lg">Huella de carbono actual</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">Toneladas de CO2</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-2 col-start-3">
+            <h1 class="text-lg">Predicción de huella de carbono</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">Toneladas de CO2</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-3 row-span-2 col-start-5">
+            1
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-5 row-span-5 row-start-3">
+            2
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-5 col-start-6 row-start-3">
+            3
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
+            <h1 class="text-sm">Electricidad</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">kWh</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
+            <h1 class="text-sm">Diesel</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">litros</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
+            <h1 class="text-sm">Gas Natural</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">m³</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
+            <h1 class="text-sm">GLP</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">kg</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
+            <h1 class="text-sm">Residuos Sólidos</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">kg</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
+            <h1 class="text-sm">Transporte Aéreo</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">km</p>
+        </div>
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl row-span-2 row-start-8">
+            <h1 class="text-sm">Agua</h1>
+            <p class="text-4xl font-bold mt-2">12.34</p>
+            <p class="text-sm italic text-gray-600">litros</p>
+        </div>
+    </div>
+    <div class="grid grid-cols-5 grid-rows-10 gap-4  bg-back w-10/12 h-[150vh] mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-2 row-span-3 flex items-center">
+            <form class="flex flex-col gap-2 w-full">
+                   <select name="recurso" title="recurso" class="custom-input text-sm" required>
+                        <option value="" disabled selected>Seleccione el tipo de fuente</option>
+                        @for (recurso of recursos; track recurso){
+                            <option value="{{ recurso.id }}">{{ recurso.nombre }} ({{ recurso.unidad }})</option>
+                        }
+                    </select>
+                    <div class="flex gap-2">
+                        <input type="number" placeholder="Mes" id="mes_periodo" name="mes_periodo" min="1" max="12" class="custom-input" required>
+                        <input type="number" placeholder="Año" id="año_periodo" name="año_periodo" min="1900" max="2100" class="custom-input" required>
+                    </div>
+
+                    <input type="number" id="cantidad" placeholder='Cantidad' name="cantidad" class="custom-input" required>
+
+                    <input type="number" id="costo_mxn" placeholder="Costo (MXM)" name="costo_mxn" class="custom-input" required>
+
+                    <input type="url" id="evidencia_url" placeholder="URL de evidencia(Opcional)" name="evidencia_url" class="custom-input">
+
+            </form>
+        </div>
+
+        <div class="p-2 rounded-2xl col-start-3 row-start-3 flex items-end ">
+            <button class="bg-green px-10 py-2 rounded-lg hover:bg-h-green transition-colors duration-300 shadow-md">Agregar</button>
+        </div>
+
+        <div class="bg-dark-gray shadow-md p-2 rounded-2xl col-span-5 row-span-7 row-start-4 overflow-x-scroll">
+            <table class="min-w-full divide-y rounded-2xl overflow-hidden">
+                <thead class="bg-dark-green text-white">
+                    <tr>
+                        <th class="px-4 py-2">Tipo de Fuente</th>
+                        <th class="px-4 py-2">Mes</th>
+                        <th class="px-4 py-2">Año</th>
+                        <th class="px-4 py-2">Cantidad</th>
+                        <th class="px-4 py-2">Costo (MXN)</th>
+                        <th class="px-4 py-2">Evidencia URL</th>
+                        <th class="px-4 py-2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-gray-100 text-gray-800">
+                    <!-- Ejemplo de fila, reemplaza con datos dinámicos -->
+                    <tr>
+                        <td class="px-4 py-2 text-center">Electricidad</td>
+                        <td class="px-4 py-2 text-center">6</td>
+                        <td class="px-4 py-2 text-center">2024</td>
+                        <td class="px-4 py-2 text-center">1200</td>
+                        <td class="px-4 py-2 text-center">3500</td>
+                        <td class="px-4 py-2 text-center"><a href="#" class="text-blue-600 underline">Ver evidencia</a></td>
+                        <td class="px-4 py-2 text-center">
+                            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors duration-300">Eliminar</button>
+                        </td>
+                    </tr>
+                    <!-- Más filas aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class=" bg-back w-10/12 text-center h-[60vh] mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-2xl font-bold mb-6">CONSEJOS</h1>
+        <div class="blur-md w-full h-[40vh] bg-back grid grid-cols-3 grid-rows-1 gap-4">
+            <div class="bg-green rounded-2xl col-span-1"></div>
+            <div class="bg-green rounded-2xl col-span-1"></div>
+            <div class="bg-green rounded-2xl col-span-1"></div>
+        </div>
+        <h1 class="text-2xl font-bold mb-6 relative bottom-5/12">Parece que no tienes acceso, <a routerLink="/a" class="text-gray hover:text-dark-gray">actualize su plan</a> para poder ver el contenido </h1>
+    </div>
+</body>
+    
