@@ -5,10 +5,11 @@ import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routes } from '../../app.routes';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [RouterModule, FormsModule, HttpClientModule], // <-- Agrega HttpClientModule aquí
+  imports: [RouterModule, FormsModule, HttpClientModule, CommonModule], // <-- Agrega HttpClientModule aquí
   providers: [Api, Router],
 
   templateUrl: './sign-up.html',
